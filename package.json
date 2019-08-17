@@ -1,0 +1,28 @@
+{
+  "name": "@dddfffppp/react-native-alibcsdk",
+  "version": "1.0.2",
+  "description": "React Native的阿里百川sdk， 包含淘宝授权登录等",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wutian5200/react-native-alibc-sdk.git"
+  },
+  "keywords": [
+    "react-native",
+    "alibc",
+    "sdk",
+    "alibaba",
+    "taobao",
+    "baichuan",
+    "login"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wutian5200/react-native-alibc-sdk/issues"
+  },
+  "homepage": "https://github.com/wutian5200/react-native-alibc-sdk#readme"
+}

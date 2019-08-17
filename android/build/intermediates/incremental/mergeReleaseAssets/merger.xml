@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/src/main/assets"/><source path="/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/generated/assets/shaders/release"/></dataSet><dataSet config="release"><source path="/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/src/release/assets"/></dataSet></merger>
