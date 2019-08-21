@@ -1,6 +1,7 @@
 
 package com.daiyan;
 
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -101,13 +102,15 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
   * 初始化
   */
   @ReactMethod
-  public void init(final String pid, final Boolean forceH5, final Callback callback) {
+//  public void init(final String pid, final Boolean forceH5, final Callback callback) {
+  public void init(final String pid, final Boolean forceH5, final Promise promise) {
       this.alibcTaokeParams = new AlibcTaokeParams(pid, "", "");
       AlibcTradeSDK.asyncInit(reactContext, new AlibcTradeInitCallback() {
         @Override
         public void onSuccess() {
             AlibcTradeSDK.setForceH5(forceH5);
-            callback.invoke(null, "init success");
+            promise.resolve(false);
+//            callback.invoke(null, "init success");
         }
 
         @Override
@@ -115,7 +118,8 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
             WritableMap map = Arguments.createMap();
             map.putInt("code", code);
             map.putString("msg", msg);
-            callback.invoke(map);
+            promise.resolve(map);
+//            callback.invoke(map);
         }
     }); 
   }
@@ -124,7 +128,8 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
   * 登录
   */
   @ReactMethod
-  public void login(final Callback callback) {
+//  public void login(final Callback callback) {
+  public void login(final Promise promise) {
       AlibcLogin alibcLogin = AlibcLogin.getInstance();
 
       alibcLogin.showLogin(getCurrentActivity(), new AlibcLoginCallback() {
@@ -136,25 +141,32 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
             map.putString("avatarUrl", session.avatarUrl);
             map.putString("openId", session.openId);
             map.putString("openSid", session.openSid);
-            callback.invoke(null, map);
+            map.putString("err", "1");
+            promise.resolve(map);
+//            callback.invoke(null, map);
           }
           @Override
           public void onFailure(int code, String msg) {
             WritableMap map = Arguments.createMap();
             map.putInt("code", code);
             map.putString("msg", msg);
-            callback.invoke(map);
+              map.putString("err", "0");
+            promise.resolve(map);
+//            callback.invoke(map);
           }
       });
   }
 
   @ReactMethod
-  public void isLogin(final Callback callback) {
-      callback.invoke(null, AlibcLogin.getInstance().isLogin());
+  public void isLogin(final Promise promise) {
+      promise.resolve(AlibcLogin.getInstance().isLogin());
+//      callback.invoke(null, AlibcLogin.getInstance().isLogin());
+//      callback.invoke(null, AlibcLogin.getInstance().isLogin());
   }
 
   @ReactMethod
-  public void getUser(final Callback callback) {
+//  public void getUser(final Callback callback) {
+  public void getUser(final Promise promise) {
       if (AlibcLogin.getInstance().isLogin()) {
         Session session = AlibcLogin.getInstance().getSession();
         WritableMap map = Arguments.createMap();
@@ -162,9 +174,12 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
         map.putString("avatarUrl", session.avatarUrl);
         map.putString("openId", session.openId);
         map.putString("openSid", session.openSid);
-        callback.invoke(null, map);
+        map.putString("err", "1");
+          promise.resolve(map);
+//        callback.invoke(null, map);
       } else {
-        callback.invoke(NOT_LOGIN);
+          promise.resolve(false);
+//        callback.invoke(NOT_LOGIN);
       }
         
   }
@@ -173,13 +188,15 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
   * 退出登录
   */
   @ReactMethod
-  public void logout(final Callback callback) {
+//  public void logout(final Callback callback) {
+  public void logout(final Promise promise) {
       AlibcLogin alibcLogin = AlibcLogin.getInstance();
 
       alibcLogin.logout(getCurrentActivity(), new LogoutCallback() {
           @Override
           public void onSuccess() {
-            callback.invoke(null, "logout success");
+              promise.resolve(false);
+//            callback.invoke(null, "logout success");
           }
 
           @Override
@@ -187,36 +204,54 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
             WritableMap map = Arguments.createMap();
             map.putInt("code", code);
             map.putString("msg", msg);
-            callback.invoke(msg);
+              promise.resolve(msg);
+//            callback.invoke(msg);
           }
       });
   }
 
   @ReactMethod
-  public void show(final ReadableMap param, final Callback callback) {
+//  public void show(final ReadableMap param, final Callback callback) {
+  public void show(final ReadableMap param,final String Type, final Promise promise) {
+    switch (Type){
+        case "Auto":
+            alibcShowParams = new AlibcShowParams(OpenType.Auto, false);
+            break;
+        case "H5":
+            alibcShowParams = new AlibcShowParams(OpenType.H5, false);
+            break;
+        case "Native":
+            alibcShowParams = new AlibcShowParams(OpenType.Native, false);
+            break;
+        default:
+            alibcShowParams = new AlibcShowParams(OpenType.Auto, false);
+            break;
+    }
+
     String type = param.getString("type");
     switch(type){
       case "detail":
-        this._show(new AlibcDetailPage(param.getString("payload")), callback);
+        this._show(new AlibcDetailPage(param.getString("payload")), promise);
         break;
       case "url":
-        this._show(new AlibcPage(param.getString("payload")), callback);
+        this._show(new AlibcPage(param.getString("payload")), promise);
         break;
       case "shop":
-        this._show(new AlibcShopPage(param.getString("payload")), callback);
+        this._show(new AlibcShopPage(param.getString("payload")), promise);
         break;
       case "orders":
         ReadableMap payload = param.getMap("payload");
-        this._show(new AlibcMyOrdersPage(payload.getInt("orderType"), payload.getBoolean("isAllOrder")), callback);
+        this._show(new AlibcMyOrdersPage(payload.getInt("orderType"), payload.getBoolean("isAllOrder")), promise);
         break;
       case "addCard":
-        this._show(new AlibcAddCartPage(param.getString("payload")), callback);
+        this._show(new AlibcAddCartPage(param.getString("payload")), promise);
         break;
       case "mycard":
-        this._show(new AlibcMyCartsPage(), callback);
+        this._show(new AlibcMyCartsPage(), promise);
         break;
-      default: 
-        callback.invoke(INVALID_PARAM);
+      default:
+          promise.resolve(false);
+//        callback.invoke(INVALID_PARAM);
         break;
     }
   }
@@ -296,8 +331,9 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
       });
   }
 
-  private void _show(AlibcBasePage page, final Callback callback) {
-    AlibcTrade.show(getCurrentActivity(), 
+//  private void _show(AlibcBasePage page, final Callback callback) {
+  private void _show(AlibcBasePage page, final Promise promise) {
+    AlibcTrade.show(getCurrentActivity(),
                         page, 
                         this.alibcShowParams,
                         this.alibcTaokeParams, 
@@ -311,15 +347,20 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
               //加购成功
               WritableMap map = Arguments.createMap();
               map.putString("type", "card");
-              callback.invoke(null, map);
+                map.putString("err", "1");
+                promise.resolve(map);
+//              callback.invoke(null, map);
             }else if (tradeResult.resultType.equals(ResultType.TYPEPAY)){
               //支付成功
               WritableMap map = Arguments.createMap();
               map.putString("type", "pay");
               map.putString("orders", "" + tradeResult.payResult.paySuccessOrders);
-              callback.invoke(null, map);
+                map.putString("err", "1");
+                promise.resolve(map);
+//              callback.invoke(null, map);
             }else {
-              callback.invoke(INVALID_TRADE_RESULT);
+                promise.resolve(INVALID_TRADE_RESULT);
+//              callback.invoke(INVALID_TRADE_RESULT);
             }
           }
           @Override
@@ -328,7 +369,9 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
             map.putString("type", "error");
             map.putInt("code", code);
             map.putString("msg", msg);
-            callback.invoke(msg);
+              map.putString("err", "1");
+              promise.resolve(map);
+//            callback.invoke(msg);
           }
       });
   }

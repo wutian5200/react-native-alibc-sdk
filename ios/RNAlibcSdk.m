@@ -17,32 +17,32 @@
 }
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(init: (NSString *)pid forceH5:(BOOL)forceH5 callback:(RCTResponseSenderBlock)callback)
+RCT_EXPORT_METHOD(init: (NSString *)pid forceH5:(BOOL)forceH5 resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
-    [[AlibcSdkBridge sharedInstance] init:pid forceH5:forceH5 callback:callback];
+    [[AlibcSdkBridge sharedInstance] init:pid forceH5:forceH5 resolver:resolve rejecter:reject];
 }
 
-RCT_EXPORT_METHOD(login: (RCTResponseSenderBlock)callback)
+RCT_EXPORT_METHOD(login: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
-    [[AlibcSdkBridge sharedInstance] login:callback];
+    [[AlibcSdkBridge sharedInstance] login:resolve rejecter:reject];
 }
-RCT_EXPORT_METHOD(isLogin: (RCTResponseSenderBlock)callback)
+RCT_EXPORT_METHOD(isLogin: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
-    [[AlibcSdkBridge sharedInstance] isLogin:callback];
-}
-
-RCT_EXPORT_METHOD(getUser: (RCTResponseSenderBlock)callback)
-{
-    [[AlibcSdkBridge sharedInstance] getUser:callback];
+    [[AlibcSdkBridge sharedInstance] isLogin:resolve rejecter:reject];
 }
 
-RCT_EXPORT_METHOD(logout: (RCTResponseSenderBlock)callback)
+RCT_EXPORT_METHOD(getUser: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
-    [[AlibcSdkBridge sharedInstance] logout:callback];
+    [[AlibcSdkBridge sharedInstance] getUser:resolve rejecter:reject];
 }
 
-RCT_EXPORT_METHOD(show: (NSDictionary *)param callback: (RCTResponseSenderBlock)callback){
-    [[AlibcSdkBridge sharedInstance] show:param callback:callback];
+RCT_EXPORT_METHOD(logout: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+{
+    [[AlibcSdkBridge sharedInstance] logout:resolve rejecter:reject];
+}
+
+RCT_EXPORT_METHOD(show: (NSDictionary *)param open:(NSString *)open resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject){
+    [[AlibcSdkBridge sharedInstance] show:param open:open resolver:resolve rejecter:reject];
 }
 
 

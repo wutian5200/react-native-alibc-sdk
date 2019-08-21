@@ -9,6 +9,9 @@
 #import "AlibcSdkBridge.h"
 #import "AlibcWebView.h"
 #import <React/RCTLog.h>
+#import <React/RCTEventDispatcher.h>
+#import <React/RCTUtils.h>
+#import <React/RCTImageLoader.h>
 
 #define NOT_LOGIN (@"not login")
 
@@ -25,15 +28,16 @@
     }
     return instance;
 }
-
-- (void)init: (NSString *)pid forceH5:(BOOL)forceH5 callback:(RCTResponseSenderBlock)callback
+RCT_EXPORT_MODULE();
+//- (void)init: (NSString *)pid forceH5:(BOOL)forceH5 resolver:(RCTPromiseResolveBlock)resolve
+RCT_EXPORT_METHOD(init:(NSString *)pid forceH5:(BOOL)forceH5 resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
     // 百川平台基础SDK初始化，加载并初始化各个业务能力插件
     [[AlibcTradeSDK sharedInstance] asyncInitWithSuccess:^{
-        callback(@[[NSNull null]]);
+        resolve([NSNull null]);
     } failure:^(NSError *error) {
         NSDictionary *ret = @{@"code": @(error.code), @"msg":error.description};
-        callback(@[ret]);
+        resolve(ret);
     }];
     
     // 初始化AlibabaAuthSDK
@@ -60,47 +64,61 @@
     [[AlibcTradeSDK sharedInstance] setIsForceH5:forceH5];
 }
 
-- (void)login: (RCTResponseSenderBlock)callback
+//- (void)login: (RCTPromiseResolveBlock)resolve
+RCT_EXPORT_METHOD(login: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
     [[ALBBSDK sharedInstance] auth:[UIApplication sharedApplication].delegate.window.rootViewController
                    successCallback:^(ALBBSession *session) {
                        ALBBUser *s = [session getUser];
-                       NSDictionary *ret = @{@"nick": s.nick, @"avatarUrl":s.avatarUrl, @"openId":s.openId, @"openSid":s.openSid};
-                       callback(@[[NSNull null], ret]);
+                       NSDictionary *ret = @{@"nick": s.nick, @"avatarUrl":s.avatarUrl, @"openId":s.openId, @"openSid":s.openSid,@"err":@"1"};
+                       resolve(ret);
                    }
                    failureCallback:^(ALBBSession *session, NSError *error) {
-                       NSDictionary *ret = @{@"code": @(error.code), @"msg":error.description};
-                       callback(@[ret]);
+                       NSDictionary *ret = @{@"code": @(error.code), @"msg":error.description,@"err":@"0"};
+                       resolve(ret);
                    }
      ];
 }
-
-- (void)isLogin: (RCTResponseSenderBlock)callback
+RCT_EXPORT_METHOD(isLogin: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+//- (void)isLogin: (RCTResponseSenderBlock)callback
 {
     bool isLogin = [[ALBBSession sharedInstance] isLogin];
-    callback(@[[NSNull null], [NSNumber numberWithBool: isLogin]]);
+    resolve([NSNumber numberWithBool: isLogin]);
 }
-
-- (void)getUser: (RCTResponseSenderBlock)callback
+RCT_EXPORT_METHOD(getUser: resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+//- (void)getUser: (RCTResponseSenderBlock)callback
 {
     if([[ALBBSession sharedInstance] isLogin]){
         ALBBUser *s = [[ALBBSession sharedInstance] getUser];
-        NSDictionary *ret = @{@"nick": s.nick, @"avatarUrl":s.avatarUrl, @"openId":s.openId, @"openSid":s.openSid};
-        callback(@[[NSNull null], ret]);
+        NSDictionary *ret = @{@"nick": s.nick, @"avatarUrl":s.avatarUrl, @"openId":s.openId, @"openSid":s.openSid,@"err":@"1"};
+        resolve(ret);
     } else {
-        callback(@[NOT_LOGIN]);
+        
+        resolve([NSNull null]);
+//        resolve(NOT_LOGIN);
     }
 }
 
-- (void)logout: (RCTResponseSenderBlock)callback
+//- (void)logout: (RCTResponseSenderBlock)callback
+RCT_EXPORT_METHOD(logout: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
     [[ALBBSDK sharedInstance] logout];
-    callback(@[[NSNull null]]);
+    resolve([NSNull null]);
 }
 
-- (void)show: (NSDictionary *)param callback: (RCTResponseSenderBlock)callback
+//- (void)show: (NSDictionary *)param callback: (RCTResponseSenderBlock)callback
+RCT_EXPORT_METHOD(show: (NSDictionary *)param open:(NSString *)open resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
     NSString *type = param[@"type"];
+    showParams.openType = AlibcOpenTypeAuto;
+    if([open isEqualToString:@"Auto"]){
+        showParams.openType = AlibcOpenTypeAuto;
+    } else if([open isEqualToString:@"H5"]){
+        showParams.openType = AlibcOpenTypeH5;
+    } else if([open isEqualToString:@"Native"]){
+        showParams.openType = AlibcOpenTypeNative;
+    }
+    
     id<AlibcTradePage> page;
     if ([type isEqualToString:@"detail"]) {
         page = [AlibcTradePageFactory itemDetailPage:(NSString *)param[@"payload"]];
@@ -120,10 +138,11 @@
         return;
     }
     
-    [self _show:page callback:callback];
+    [self _show:page resolver:resolve rejecter:reject];
 }
 
-- (void)_show: (id<AlibcTradePage>)page callback: (RCTResponseSenderBlock)callback
+//- (void)_show: (id<AlibcTradePage>)page callback: (RCTResponseSenderBlock)callback
+RCT_EXPORT_METHOD(_show: (id<AlibcTradePage>)page resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
     id<AlibcTradeService> service = [AlibcTradeSDK sharedInstance].tradeService;
     
@@ -135,15 +154,15 @@
      trackParam:nil
      tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
          if (result.result == AlibcTradeResultTypeAddCard) {
-             NSDictionary *ret = @{@"type": @"card"};
-             callback(@[[NSNull null], ret]);
+             NSDictionary *ret = @{@"type": @"card",@"err":@"1"};
+             resolve(ret);
          } else if (result.result == AlibcTradeResultTypePaySuccess) {
-             NSDictionary *ret = @{@"type": @"pay", @"orders": result.payResult.paySuccessOrders};
-             callback(@[[NSNull null], ret]);
+             NSDictionary *ret = @{@"type": @"pay", @"orders": result.payResult.paySuccessOrders,@"err":@"1"};
+             resolve(ret);
          }
      } tradeProcessFailedCallback:^(NSError * _Nullable error) {
-         NSDictionary *ret = @{@"type": @"error", @"code": @(error.code), @"msg":error.description};
-         callback(@[ret]);
+         NSDictionary *ret = @{@"type": @"error", @"code": @(error.code), @"msg":error.description,@"err":@"1"};
+         resolve(ret);
      }];
 }
 
