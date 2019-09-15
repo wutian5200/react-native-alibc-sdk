@@ -28,7 +28,7 @@ typedef void (^CompletionHandler)();
 - (void)getUser: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject;
 - (void)logout: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject;
 - (void)show: (NSDictionary *)param open:(NSString *)open resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject;
-- (void)showInWebView: (UIWebView *)webView param:(NSDictionary *)param;
+- (void)showInWebView: (UIWebView *)webView url:(NSString *)url param:(NSDictionary *)param;
 
 @end
 

@@ -3,11 +3,11 @@
  *
  * 阿里百川电商
  * 项目名称：阿里巴巴电商 AlibcTradeSDK 
- * 版本号：3.1.1.96
- * 发布时间：2017-03-24
- * 开发团队：阿里巴巴百川商业化团队
- * 阿里巴巴电商SDK答疑群号：1229144682(阿里旺旺)
- * Copyright (c) 2016-2019 阿里巴巴-移动事业群-百川. All rights reserved.
+ * 版本号：4.0.0.0
+ * 发布时间：2019-8-30
+ * 开发团队：阿里巴巴商家服务引擎团队
+ * 阿里巴巴电商SDK答疑群号：1488705339  2071154343(阿里旺旺)
+ * Copyright (c) 2016-2020 阿里巴巴-淘宝-百川. All rights reserved.
  */
 
 #import <Foundation/Foundation.h>
@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 页面工厂类,用于构造各类要显示的page */
 @interface AlibcTradePageFactory : NSObject
-
 /**
  * 创建URL指定页面
  *
@@ -40,15 +39,6 @@ NS_ASSUME_NONNULL_BEGIN
  * @return 详情页面
  */
 + (id <AlibcTradePage>)itemDetailPage:(NSString *)itemId;
-
-/**
- * 创建商品真实ID或者混淆(open)ID对应的迷你详情页面
- *
- * @param itemId   商品真实ID或者混淆(open)ID
- *
- * @return 详情页面
- */
-+ (id <AlibcTradePage>)itemMiniDetailPage:(NSString *)itemId;
 
 /**
  * 创建我的购物车页面
@@ -92,15 +82,6 @@ NS_ASSUME_NONNULL_BEGIN
  * @return 店铺页面
  */
 + (id <AlibcTradePage>)addCartPage:(NSString *)itemId;
-
-/**
- * 通过request加载指定页面,可以在里面自己附加header等
- *
- * @param request  请求
- *
- * @return URL指定页面
- */
-+ (id <AlibcTradePage>)requestPage:(NSMutableURLRequest *)request;
 
 @end
 

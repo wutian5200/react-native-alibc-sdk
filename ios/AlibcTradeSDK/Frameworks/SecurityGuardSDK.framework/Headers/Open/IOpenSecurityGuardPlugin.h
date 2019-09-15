@@ -31,15 +31,15 @@
 
 + (NSDictionary*) getMetaInfo;
 
-+ (NSInteger) initializePlugin: (NSValue*) initParam;
++ (void*) initializePlugin: (void *)pParam;
 
-+ (void*) pluginEntry;
++ (void*) nativeEntry;
 
 @end
 
 @protocol IOpenSecurityGuardPluginInterface <NSObject>
 
-- (Class) getMetaClass;
+- (Class<IOpenSecurityGuardPlugin>) getMetaClass;
 
 @end
 

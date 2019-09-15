@@ -61,6 +61,10 @@ typedef enum {
      */
     OpenNoCaptchaComponentID,
     /**
+     *  SecurityBody ComponentID
+     */
+    OpenSecurityBodyComponentID,
+    /**
      *  无效component
      */
     OpenInvalidComponentID
@@ -130,11 +134,14 @@ typedef enum {
 @protocol IOpenSimulatorDetectComponent;
 
 /**
+ *  人机接口， 详细定义见 IOpenSecurityBodyComponent.h
+ */
+@protocol IOpenSecurityBodyComponent;
+
+/**
  *  SecurityGuardSDK管理类
  */
 @interface OpenSecurityGuardManager : NSObject
-
-
 
 /**
  *  获取SecurityGuardManager单例对象
@@ -143,7 +150,15 @@ typedef enum {
  */
 + (OpenSecurityGuardManager*) getInstance;
 
-
+/**
+ *  获取SecurityGuardManager单例对象
+ *
+ *  @param authCode 初始化传入authcode
+ *
+ *  @return SecurityGuardManager单例对象
+ */
++ (OpenSecurityGuardManager*) getInstance: (NSString *)authCode
+                                    error: (NSError * __autoreleasing *)error;
 
 /**
  *  获取安全签名接口
@@ -243,6 +258,13 @@ typedef enum {
  */
 - (id<IOpenSimulatorDetectComponent>) getSimulatorDetectComp;
 
+/**
+ *  获取人机接口
+ *
+ *  @return 返回模拟器检测接口，失败返回nil
+ */
+- (id<IOpenSecurityBodyComponent>) getSecurityBodyComp;
+
 
 /**
  *  根据传入的component id获取对应的component对象
@@ -280,6 +302,15 @@ typedef enum {
  */
 - (BOOL) isOpen;
 
+
+
+/**
+ *  设置用户数据，用于数据上报
+ *
+ *  @return 无
+ */
++ (BOOL) setGlobalUserData: (NSString *) key
+           GlobalUserValue: (NSString *) value;
 
 
 @end

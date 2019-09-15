@@ -31,4 +31,10 @@ extern NSInteger const OPEN_NC_VERI_GET_WUA_FAIL;             //1209
 extern NSInteger const OPEN_NC_VERI_GET_TRACE_FAIL;           //1210
 extern NSInteger const OPEN_NC_VERI_APPKEY_MISMATCH;          //1211
 extern NSInteger const OPEN_NC_VERI_SESSION_EXPIRED;          //1212
+extern NSInteger const OPEN_NC_VERI_WUA_INVALID_PARAM;        //1213
+extern NSInteger const OPEN_NC_VERI_WUA_DATA_FILE_MISMATCHA;  //1214
+extern NSInteger const OPEN_NC_VERI_WUA_NO_DATA_FILE;         //1215
+extern NSInteger const OPEN_NC_VERI_WUA_INCORRECT_DATA_FILE;  //1216
+extern NSInteger const OPEN_NC_VERI_WUA_KEY_NOT_EXIST;        //1217
+extern NSInteger const OPEN_NC_VERI_WUA_LOW_VERSION_DATA_FILE;//1218
 extern NSInteger const OPEN_NC_UNKNOWN_ERROR;                 //1299

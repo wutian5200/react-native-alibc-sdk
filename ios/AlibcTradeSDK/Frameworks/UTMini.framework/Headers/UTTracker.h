@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 //#import <UIKit/UIViewController.h>
 //#import <UIKit/UIWebView.h>
+@class UTDSDKInfo;
 
 typedef enum _UTPageStatus{
     UT_H5_IN_WebView//设置容器中的H5页面事件的eventid为2001,不设置默认为2006
@@ -16,7 +17,18 @@ typedef enum _UTPageStatus{
 
 @interface UTTracker : NSObject
 
--(id) initWithTrackId:(NSString *) pTrackId;
+@property (readonly,copy) UTDSDKInfo * mSdkinfo;
+
+-(id) initWithTrackId:(NSString *) pTrackId __deprecated;
+
+-(id) initWithAppKey:(NSString *) pAppkey
+           appsecret:(NSString *) pAppSecret
+            authcode:(NSString *) pAuthCode
+        securitySign:(BOOL) securitySign;
+
+-(id) initWithTracker:(UTTracker *) pTracker trackid:(NSString *) pTrackId;
+
+-(NSString *) getAppKey;
 
 -(void) setGlobalProperty:(NSString *) pKey value:(NSString *) pValue;
 

@@ -58,9 +58,11 @@
  *
  *  @param timeout        接口调用超时时间，单位秒，最大不超过22，最小不小于1。
  *
+ *  @param authCode 二方用户请传nil，三方用户请传AuthCode
  */
 - (NSString*) noCaptchaForwardAuth: (NSString *) methodName
                           authInfo: (NSDictionary*) authInfo
+                          authCode: (NSString *) authCode
                            timeout: (NSInteger) timeout;
 
 

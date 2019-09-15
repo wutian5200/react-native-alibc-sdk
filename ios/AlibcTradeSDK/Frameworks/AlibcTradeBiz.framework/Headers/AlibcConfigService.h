@@ -3,15 +3,16 @@
  *
  * 阿里百川电商
  * 项目名称：阿里巴巴电商 AlibcTradeBiz 
- * 版本号：3.1.1.96
- * 发布时间：2017-03-24
- * 开发团队：阿里巴巴百川商业化团队
- * 阿里巴巴电商SDK答疑群号：1229144682(阿里旺旺)
- * Copyright (c) 2016-2019 阿里巴巴-移动事业群-百川. All rights reserved.
+ * 版本号：4.0.0.0
+ * 发布时间：2019-08-30
+ * 开发团队：阿里巴巴商家服务引擎团队
+ * 阿里巴巴电商SDK答疑群号：1488705339  2071154343(阿里旺旺)
+ * Copyright (c) 2016-2020 阿里巴巴-淘宝-百川. All rights reserved.
  */
 
 #import <Foundation/Foundation.h>
 #import "AlibcTradeTaokeParams.h"
+#import "AlibcTradeSDKConfigModel.h"
 
 #ifndef AlibcConfigService_h
 #define AlibcConfigService_h
@@ -29,9 +30,13 @@
 @property(nonatomic, copy, readwrite) NSString *channelName;
 @property(nonatomic, copy, readwrite) NSString *channelType;
 @property(nonatomic, readonly) NSString *channel;
-@property(nonatomic, assign) BOOL isForceH5;
-// TODO:
 @property(nonatomic, strong) NSString *alipayRequestSender;
+
+
+// 全局授权登录重试次数
+@property(nonatomic, assign)NSInteger reTryCount;
+// 已经重试次数
+@property(nonatomic, assign)NSInteger hasRryCount;
 
 //全局淘客参数
 @property(nonatomic, strong) AlibcTradeTaokeParams *taokeParams;
@@ -56,9 +61,6 @@
 //设置是否同步打点
 - (void)setIsSyncForTaoke:(BOOL)isSync;
 
-//双11强制降级配置
-- (NSString *)double11OpenType;
-
 //存储所有需要isv设置的配置
 - (void)setIsvConfig:(id)value forKey:(NSString *)key;
 
@@ -67,6 +69,9 @@
 - (void)setExtUserAgent:(NSString *)extUserAgent;
 
 - (NSString *)extUserAgent;
+
+// 电商配置信息
+- (AlibcTradeSDKConfigModel *)getTradeSDKConfig;
 
 @end
 #endif //AlibcConfigService_h

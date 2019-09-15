@@ -16,6 +16,10 @@
 
 + (BOOL)isInit;
 
++ (BOOL) isUTInit;
+
++ (void) setUTInit;
+
 + (instancetype)sharedInstance;
 
 /*

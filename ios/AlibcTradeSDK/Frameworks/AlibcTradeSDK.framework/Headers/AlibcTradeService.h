@@ -3,69 +3,93 @@
  *
  * 阿里百川电商
  * 项目名称：阿里巴巴电商 AlibcTradeSDK 
- * 版本号：3.1.1.96
- * 发布时间：2017-03-24
- * 开发团队：阿里巴巴百川商业化团队
- * 阿里巴巴电商SDK答疑群号：1229144682(阿里旺旺)
- * Copyright (c) 2016-2019 阿里巴巴-移动事业群-百川. All rights reserved.
+ * 版本号：4.0.0.0
+ * 发布时间：2019-8-30
+ * 开发团队：阿里巴巴商家服务引擎团队
+ * 阿里巴巴电商SDK答疑群号：1488705339  2071154343(阿里旺旺)
+ * Copyright (c) 2016-2020 阿里巴巴-淘宝-百川. All rights reserved.
  */
 
 #import <Foundation/Foundation.h>
-#import "AlibcTradeResult.h"
+#import <AlibcTradeBiz/AlibcTradeResult.h>
 #import "AlibcTradePageFactory.h"
-#import "AlibcTradeShowParams.h"
-#import "AlibcTradeSDKDefines.h"
+#import <AlibcTradeBiz/AlibcTradeShowParams.h>
+#import <AlibcTradeBiz/AlibcTradeSDKDefines.h>
 
 @class UIViewController;
 @class UIWebView;
 
-/** 交易服务 */
+/** 电商服务 */
 @protocol AlibcTradeService <NSObject>
-
 /**
- * 使用百川SDK的webview打开page，可以实现淘宝账号免登以及电商交易支付流程
  *
- * @param parentController            当前view controller. 若isNeedPush为YES, 需传入当前UINavigationController.
- * @param page                        想要打开的page
- * @param showParams                  打开方式的一些自定义参数
- * @param taoKeParams                 淘客参数
- * @param trackParam                  链路跟踪参数
- * @param tradeProcessSuccessCallback 交易流程中成功回调(加购成功(使用+[AlibcTradePageFactory addCartPage:]时)/发生支付)
- * @param tradeProcessFailedCallback  交易流程中退出或者调用发生错误的回调
+ * 使用openUrl方式直接打开非官方code覆盖的链接
  *
- * @return 0标识跳转到手淘打开了,1标识用h5打开,-1标识出错
- */
-- (NSInteger)          show:(UIViewController *__nonnull)parentController
-                       page:(id <AlibcTradePage> __nonnull)page
-                 showParams:(nullable AlibcTradeShowParams *)showParams
-                taoKeParams:(nullable AlibcTradeTaokeParams *)taoKeParams
-                 trackParam:(nullable NSDictionary *)trackParam
-tradeProcessSuccessCallback:(nullable void (^)(AlibcTradeResult *__nullable result))onSuccess
- tradeProcessFailedCallback:(nullable void (^)(NSError *__nullable error))onFailure;
-
-/**
- * 使用isv自己的webview打开page，可以实现淘宝账号免登以及电商交易支付流程
- *
- * @param parentController            webView所在的view controller.
+ * @param url                         想要打开的url （可以打开非openByBizCode所覆盖的url）
+ * @param identity                    电商套件标识（需要申请），目前固定传入 “trade”，后续开发申请通道
  * @param webView                     isv自己的webview,请先设置好自己的delegate先调用本接口,否则拦截登陆等逻辑会失效
- * @param page                        想要打开的page
+ * @param parentController            webView所在的view controller.
  * @param showParams                  打开方式的一些自定义参数
  * @param taoKeParams                 淘客参数
  * @param trackParam                  链路跟踪参数
- * @param tradeProcessSuccessCallback 交易流程中成功回调(加购成功(使用+[AlibcTradePageFactory addCartPage:]时)/发生支付)
- * @param tradeProcessFailedCallback  交易流程中退出或者调用发生错误的回调
+ * @param tradeProcessSuccessCallback 交易流程中成功回调(加购成功(使用+[AlibcTradePageFactory addCartPage:]时)/发生支付) 其余打开方式不返回
+ * @param tradeProcessFailedCallback  交易流程中退出或者调用发生错误的回调 其余打开方式不返回
  *
  * @return  0:  标识跳转到手淘打开了
-            1:  标识用h5打开
-           -1:  标识出错
+            1:  标识用h5打开了
+            2:  标识用小程序打开了Url
+           -1:  入参出错
+           -2:  此URL需要使用openByCode 通过code来进行页面打开
+           -3:  打开页面失败
+ *
+ *
+ * 返回值 仅一种情况需要媒体处理 即当AlibcTradeShowParams 中 isNeedPush 为 YES时.此时需要媒体根据API返回值为1时 （应用內H5打开），在传入的UINavigationController中push新页面。
+ *
  */
-- (NSInteger)          show:(UIViewController *__nonnull)parentController
+- (NSInteger)     openByUrl:(NSString *__nonnull)url
+                   identity:(NSString *__nonnull)identity
                     webView:(nullable UIWebView *)webView
-                       page:(id <AlibcTradePage> __nonnull)page
+           parentController:(UIViewController *__nonnull)parentController
                  showParams:(nullable AlibcTradeShowParams *)showParams
                 taoKeParams:(nullable AlibcTradeTaokeParams *)taoKeParams
                  trackParam:(nullable NSDictionary *)trackParam
 tradeProcessSuccessCallback:(nullable void (^)(AlibcTradeResult *__nullable result))onSuccess
  tradeProcessFailedCallback:(nullable void (^)(NSError *__nullable error))onFailure;
+
+
+/**
+ *
+ * 使用openByCode方式直接打开官方code覆盖的页面
+ *
+ * @param pageCode                    后台申请的官方页面pageCode 目前支持“detail” “cart”.后续会开放更多的pageCode
+ * @param page                        想要打开的page
+ * @param webView                     isv自己的webview,请先设置好自己的delegate先调用本接口,否则拦截登陆等逻辑会失效
+ * @param parentController            webView所在的view controller.
+ * @param showParams                  打开方式的一些自定义参数
+ * @param taoKeParams                 淘客参数
+ * @param trackParam                  链路跟踪参数
+ * @param tradeProcessSuccessCallback 交易流程中成功回调(加购成功(使用+[AlibcTradePageFactory addCartPage:]时)/发生支付) 其余打开方式不返回
+ * @param tradeProcessFailedCallback  交易流程中退出或者调用发生错误的回调 其余打开方式不返回
+ *
+ * @return  0:  标识跳转到手淘打开了
+            1:  标识用h5打开了
+            2:  标识用小程序打开了Url
+           -1:  入参出错
+           -2:  打开页面失败
+ *
+ *
+ * 返回值 仅一种情况需要媒体处理 即当AlibcTradeShowParams 中 isNeedPush 为 YES时.此时需要媒体根据API返回值为1时 （应用內H5打开），在传入的UINavigationController中push新页面。
+ *
+ */
+- (NSInteger)    openByBizCode:(NSString *__nonnull)pageCode
+                       page:(id <AlibcTradePage> __nonnull)page
+                    webView:(nullable UIWebView *)webView
+           parentController:(UIViewController *__nonnull)parentController
+                 showParams:(nullable AlibcTradeShowParams *)showParams
+                taoKeParams:(nullable AlibcTradeTaokeParams *)taoKeParams
+                 trackParam:(nullable NSDictionary *)trackParam
+tradeProcessSuccessCallback:(nullable void (^)(AlibcTradeResult *__nullable result))onSuccess
+ tradeProcessFailedCallback:(nullable void (^)(NSError *__nullable error))onFailure;
+
 
 @end

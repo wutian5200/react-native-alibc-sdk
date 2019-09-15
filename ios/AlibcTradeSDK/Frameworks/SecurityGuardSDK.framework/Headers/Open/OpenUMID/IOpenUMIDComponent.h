@@ -9,6 +9,16 @@
 #import <Foundation/Foundation.h>
 
 /**
+ *  @brief umid发生变化时（包含第一次生成的情形），会抛出该通知。
+ *  @discussion userInfo字典中会包含"token"和"env"这两个key及对应的值，表示在env环境下token背后的umid发生了变化。
+ *  @code
+ SDP_ENVIRONMENT env = [userInfo[@"env"] intValue];
+ NSString *umidToken = userInfo[@"token"];
+ *  @endcode
+ */
+extern NSString *const IOpenUMIDComponentUmidDidChanged;
+
+/**
  *  umid 使用的环境变量定义
  */
 typedef enum {

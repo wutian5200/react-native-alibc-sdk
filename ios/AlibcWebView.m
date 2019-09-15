@@ -8,12 +8,13 @@
 
 #import "AlibcWebView.h"
 #import <React/RCTLog.h>
-
+#import <AlibcTradeSDK/AlibcTradeSDK.h>
+#import "AlibcSdkBridge.h"
 @implementation AlibcWebView
 
 - (void)setParam:(NSDictionary *)param
 {
-    [[AlibcSdkBridge sharedInstance] showInWebView:self param:param];
+//    [[AlibcSdkBridge sharedInstance] showInWebView:self param:param];
 }
 
 @end

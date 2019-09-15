@@ -3,19 +3,19 @@
  *
  * 阿里百川电商
  * 项目名称：阿里巴巴电商 AlibcTradeSDK 
- * 版本号：3.1.1.96
- * 发布时间：2017-03-24
- * 开发团队：阿里巴巴百川商业化团队
- * 阿里巴巴电商SDK答疑群号：1229144682(阿里旺旺)
- * Copyright (c) 2016-2019 阿里巴巴-移动事业群-百川. All rights reserved.
+ * 版本号：4.0.0.0
+ * 发布时间：2019-8-30
+ * 开发团队：阿里巴巴商家服务引擎团队
+ * 阿里巴巴电商SDK答疑群号：1488705339  2071154343(阿里旺旺)
+ * Copyright (c) 2016-2020 阿里巴巴-淘宝-百川. All rights reserved.
  */
 
 #import <Foundation/Foundation.h>
+#import <AlibcTradeBiz/AlibcTradeBiz.h>
 #import "AlibcTradePageFactory.h"
 #import "AlibcTradeService.h"
-#import "AlibcTradeShowParams.h"
-#import <AlibcTradeCommon/AlibcTradeCommon.h>
-#import <AlibcTradeBiz/AlibcTradeBiz.h>
+#import <AlibcTradeBiz/AlibcTradeShowParams.h>
+
 
 @interface AlibcTradeSDK : NSObject
 
@@ -103,13 +103,6 @@
  */
 - (void)setEnv:(AlibcEnvironment)env;
 
-/**
- *  设置全局配置,是否强制使用h5
- *
- *  @param isForceH5 是否强制使用h5,show接口的AlibcTradeShowParams参数优先级比这里高,AlibcTradeShowParams设置AlibcOpenTypeNative,依然可以跳手淘..
- */
-- (void)setIsForceH5:(BOOL)isForceH5;
-
 /*
  *  设置是否对淘客使用同步打点
  *  默认的淘客打点方式,sdk会自己选择合适的方式,调用该接口与否不影响打点,建议开发者不要调用自己配置
@@ -125,6 +118,12 @@
  *  @param version 版本字段
  */
 - (void)setIsvVersion:(NSString *)version;
+
+/**
+ *  设置三方App名称,可用于标识App
+ *
+ */
+- (void)setIsvAppName:(NSString *)appName;
 
 /**
  *  设置App标识字段,和isvcode同义,可用于区分使用本SDK的具体三方App

@@ -71,6 +71,11 @@ extern NSInteger const OPEN_ENUM_SIGN_ATLAS_FAST;
  */
 extern NSInteger const OPEN_ENUM_SIGN_ATLAS_FAST2;
 
+/**
+ *  xiami签名
+ */
+extern NSInteger const OPEN_ENUM_SIGN_XIAMI;
+
 
 /**
  *  无效签名类型

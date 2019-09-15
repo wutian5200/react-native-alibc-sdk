@@ -21,6 +21,12 @@
  */
 - (NSInteger) initialize;
 
+/**
+ *  初始化接口
+ *
+ *  @return 初始化结果
+ */
+- (NSInteger) initialize: (void *)authCode;
 
 
 @end

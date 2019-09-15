@@ -3,11 +3,11 @@
  *
  * 阿里百川电商
  * 项目名称：阿里巴巴电商 AlibcTradeBiz 
- * 版本号：3.1.1.96
- * 发布时间：2017-03-24
- * 开发团队：阿里巴巴百川商业化团队
- * 阿里巴巴电商SDK答疑群号：1229144682(阿里旺旺)
- * Copyright (c) 2016-2019 阿里巴巴-移动事业群-百川. All rights reserved.
+ * 版本号：4.0.0.0
+ * 发布时间：2019-08-30
+ * 开发团队：阿里巴巴商家服务引擎团队
+ * 阿里巴巴电商SDK答疑群号：1488705339  2071154343(阿里旺旺)
+ * Copyright (c) 2016-2020 阿里巴巴-淘宝-百川. All rights reserved.
  */
 
 #import <Foundation/Foundation.h>
@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 地址 */
 @interface AlibcTradeEnv : NSObject
 /** 真实ID商品详情页地址 */
-+ (nullable NSString *)itemURLWithItemType:(NSInteger)itemType itemID:(NSString *)itemID;
++ (nullable NSString *)itemURLWithItemType:(NSString *)itemID;
 
 /** 迷你商品详情页地址 */
 + (nullable NSString *)miniItemURLWithItemID:(NSString *)itemID;
@@ -42,6 +42,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 配置服务端host地址(营造维护) */
 + (nullable NSString *)configServerHost;
+
+/** 配置新电商配置服务端host地址 */
++ (nullable NSString *)configNewTradeServerHost;
 @end
 
 NS_ASSUME_NONNULL_END

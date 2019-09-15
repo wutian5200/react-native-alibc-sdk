@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DDB144F232B3BD7008C7DC3 /* ALiTradeWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB144E232B3BD7008C7DC3 /* ALiTradeWebViewController.m */; };
+		3DDB1455232B636A008C7DC3 /* ALiTradeSDKShareParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB1454232B636A008C7DC3 /* ALiTradeSDKShareParam.m */; };
+		3DDB1458232B6374008C7DC3 /* ALiTradeTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB1457232B6374008C7DC3 /* ALiTradeTestData.m */; };
 		663CB5331EA39D11004397A2 /* AlibcTradeWebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 663CB5321EA39D11004397A2 /* AlibcTradeWebViewManager.m */; };
 		66646BCE1EA6480500DFED39 /* AlibcSdkBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 66646BCD1EA6480500DFED39 /* AlibcSdkBridge.m */; };
 		66646BD11EA7382B00DFED39 /* AlibcWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66646BD01EA7382B00DFED39 /* AlibcWebView.m */; };
@@ -27,6 +30,12 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNAlibcSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNAlibcSdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DDB144E232B3BD7008C7DC3 /* ALiTradeWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALiTradeWebViewController.m; sourceTree = "<group>"; };
+		3DDB1451232B3C0F008C7DC3 /* ALiTradeWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALiTradeWebViewController.h; sourceTree = "<group>"; };
+		3DDB1453232B6358008C7DC3 /* ALiTradeSDKShareParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALiTradeSDKShareParam.h; sourceTree = "<group>"; };
+		3DDB1454232B636A008C7DC3 /* ALiTradeSDKShareParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALiTradeSDKShareParam.m; sourceTree = "<group>"; };
+		3DDB1456232B6373008C7DC3 /* ALiTradeTestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALiTradeTestData.h; sourceTree = "<group>"; };
+		3DDB1457232B6374008C7DC3 /* ALiTradeTestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALiTradeTestData.m; sourceTree = "<group>"; };
 		663CB5321EA39D11004397A2 /* AlibcTradeWebViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlibcTradeWebViewManager.m; sourceTree = "<group>"; };
 		66646BCC1EA6480500DFED39 /* AlibcSdkBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlibcSdkBridge.h; sourceTree = "<group>"; };
 		66646BCD1EA6480500DFED39 /* AlibcSdkBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlibcSdkBridge.m; sourceTree = "<group>"; };
@@ -74,9 +83,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3DDB144D232B3B82008C7DC3 /* webview */ = {
+			isa = PBXGroup;
+			children = (
+				3DDB144E232B3BD7008C7DC3 /* ALiTradeWebViewController.m */,
+				3DDB1451232B3C0F008C7DC3 /* ALiTradeWebViewController.h */,
+			);
+			name = webview;
+			sourceTree = "<group>";
+		};
+		3DDB1452232B6329008C7DC3 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				3DDB1456232B6373008C7DC3 /* ALiTradeTestData.h */,
+				3DDB1457232B6374008C7DC3 /* ALiTradeTestData.m */,
+				3DDB1454232B636A008C7DC3 /* ALiTradeSDKShareParam.m */,
+				3DDB1453232B6358008C7DC3 /* ALiTradeSDKShareParam.h */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				3DDB1452232B6329008C7DC3 /* data */,
+				3DDB144D232B3B82008C7DC3 /* webview */,
 				66E8BD7D1E991C25005B1C15 /* AlibabaAuthSDK.bundle */,
 				66E8BD7E1E991C25005B1C15 /* AlipaySDK.bundle */,
 				66E8BD7F1E991C25005B1C15 /* ALPLinkPartnerSDK.bundle */,
@@ -154,6 +185,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -172,9 +204,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				66646BCE1EA6480500DFED39 /* AlibcSdkBridge.m in Sources */,
+				3DDB144F232B3BD7008C7DC3 /* ALiTradeWebViewController.m in Sources */,
+				3DDB1455232B636A008C7DC3 /* ALiTradeSDKShareParam.m in Sources */,
 				66646BD11EA7382B00DFED39 /* AlibcWebView.m in Sources */,
 				663CB5331EA39D11004397A2 /* AlibcTradeWebViewManager.m in Sources */,
 				B3E7B58A1CC2AC0600A0062D /* RNAlibcSdk.m in Sources */,
+				3DDB1458232B6374008C7DC3 /* ALiTradeTestData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

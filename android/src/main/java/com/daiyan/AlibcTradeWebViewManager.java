@@ -142,6 +142,7 @@ public class AlibcTradeWebViewManager extends SimpleViewManager<WebView> {
 
 	@ReactProp(name = "param")
 	public void propSetParam(WebView view, ReadableMap param) {
+//		mModule.show();
 		mModule.showInWebView(view, new AlibcWebViewClient(), param);
 	}
 }

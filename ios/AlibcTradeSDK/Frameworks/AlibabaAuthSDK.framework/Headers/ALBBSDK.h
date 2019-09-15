@@ -26,7 +26,7 @@
 #define ALBBNotificationH5LoginDismiss                @"ALBB_NOTIFICATION_H5_LOGIN_DISMISS"
 #endif
 
-#define ALBB_SDK_VERSION @"1.1.0.25"
+#define ALBB_SDK_VERSION @"1.1.0.30"
 
 /** 回调定义 */
 typedef void (^loginSuccessCallback)(ALBBSession *session);
@@ -39,7 +39,7 @@ typedef void (^loginResultHandler)(ALBBSession *session);
 typedef enum {
   H5Only = 1                     ,//只拉起h5授权
   NormalAuth                    ,//正常授权（淘宝+h5）
-} AuthOption;
+} ALBBAccountAuthOption;
 
 @interface ALBBSDK : NSObject
 
@@ -62,6 +62,12 @@ failureCallback:(loginFailureCallback) onFailure;
  退出登录
  */
 - (void)logout;
+
+/**
+ * 退出登录
+ * @param callback 登出回调
+ */
+- (void)logoutWithCallback:(void(^)())callback;
 
 /**
  是否是登录URL
@@ -94,6 +100,6 @@ failureCallback:(loginFailureCallback) onFailure;
 //种本地cookie，初始化已经自动种过，目前供微博使用，微博有清除cookie逻辑，之后需要把登录cookie种回来
 - (void)loadCookies;
 
-- (void)setAuthOption:(AuthOption)authOption;
+- (void)setAuthOption:(ALBBAccountAuthOption)authOption;
 
 @end
