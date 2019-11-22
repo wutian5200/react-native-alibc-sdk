@@ -12,12 +12,12 @@ buildscript {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
@@ -63,5 +63,8 @@ dependencies {
     implementation 'com.alibaba.sdk.android:AlibcTradeBiz:4.0.0.0@aar'
     implementation 'com.alibaba.sdk.android:nb_trade:4.0.0.0@aar'
     implementation 'com.alibaba:fastjson:1.2.41'
+
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
+
 }
   

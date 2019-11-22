@@ -56,13 +56,15 @@ import com.alibaba.baichuan.android.trade.callback.AlibcTradeCallback;
 import java.util.HashMap;
 import java.util.Map;
 
-import android.webkit.WebView; 
+import android.view.View;
+import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebChromeClient;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 
 import java.util.List;
 import android.util.Log;
+import android.widget.Toast;
 
 public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
 
@@ -110,7 +112,7 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
     alibcShowParams.setOpenType(OpenType.Auto);
 
       alibcShowParams.setClientType("taobao");
-      alibcShowParams.setBackUrl("");
+      alibcShowParams.setBackUrl("alisdk://");
       exParams = new HashMap<>();
     exParams.put(AlibcConstants.ISV_CODE, "rnappisvcode");
   }
@@ -236,21 +238,6 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
   public void logout(final Promise promise) {
       AlibcLogin alibcLogin = AlibcLogin.getInstance();
 
-//      alibcLogin.logout(new AlibcLoginCallback() {
-//          @Override
-//          public void onSuccess(int loginResult, String openId, String userNick) {
-//              // 参数说明：
-//              // loginResult(3--登出成功)
-//              // openId：用户id
-//              // userNick: 用户昵称
-//          }
-//
-//          @Override
-//          public void onFailure(int code, String msg) {
-//              // code：错误码  msg： 错误信息
-//          }
-//      });
-
       alibcLogin.logout( new AlibcLoginCallback() {
           @Override
           public void onSuccess(int loginResult, String openId, String userNick) {
@@ -272,28 +259,27 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
   @ReactMethod
 //  public void show(final ReadableMap param, final Callback callback) {
   public void show(final ReadableMap param,final String Type, final Promise promise) {
+      alibcShowParams = new AlibcShowParams();//OpenType.Auto, false
+      alibcShowParams.setClientType("taobao");
+      alibcShowParams.setBackUrl("alisdk://");
+//      alibcShowParams.setBackUrl("alisdk://");
     switch (Type){
         case "Auto":
-            alibcShowParams = new AlibcShowParams();//OpenType.Auto, false
+            System.out.println("Urlll44444444444" + Type);
             alibcShowParams.setOpenType(OpenType.Auto);
-            alibcShowParams.setClientType("taobao");
             break;
         case "H5":
-            alibcShowParams = new AlibcShowParams();//OpenType.H5, false
+            System.out.println("Urlll55555555555" + Type);
             alibcShowParams.setOpenType(OpenType.Auto);
-
-            alibcShowParams.setClientType("taobao");
             break;
         case "Native":
-            alibcShowParams = new AlibcShowParams();//OpenType.Native, false
+            System.out.println("Urlll66666666666" + Type);
             alibcShowParams.setOpenType(OpenType.Native);
 
-            alibcShowParams.setClientType("taobao");
             break;
         default:
-            alibcShowParams = new AlibcShowParams();//OpenType.Auto, false
+            System.out.println("Urlll7777777777" + Type);
             alibcShowParams.setOpenType(OpenType.Auto);
-            alibcShowParams.setClientType("taobao");
             break;
     }
 
@@ -303,8 +289,21 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
         this._showInWebView(new AlibcDetailPage(param.getString("payload")),"detail", promise);
         break;
       case "url":
-//        this._showInWebView(new AlibcDetailPage(param.getString("payload")), promise);
-        this._showByUrl(param.getString("payload"), promise);
+          System.out.println("Urlll11111111111111" + Type);
+//          if(Type  == "H5"){
+          if(Type.equals("H5")){
+              System.out.println("Urlll122222222222" + Type);
+              Intent intent = new Intent(mActivity, WebViewActivity.class);
+              intent.putExtra("url", param.getString("payload"));
+              mActivity.startActivity(intent);
+          }else{
+              System.out.println("Urlll133333333333333" + Type);
+//              this._showInWebView(new AlibcDetailPage(param.getString("payload")),"detail", promise);
+                this._showByUrl(param.getString("payload"), promise);
+//
+          }
+
+
         break;
       case "shop":
         this._showInWebView(new AlibcShopPage(param.getString("payload")),"shop", promise);
@@ -337,6 +336,10 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
         break;
       case "shop":
         this._showWebView(new AlibcShopPage(param.getString("payload")));
+        break;
+    case "auction":
+//        PromotionsPage promotionsPage = new PromotionsPage("shop", "商家测试帐号17");
+//        this._showWebView(new Ali(param.getString("payload")));
         break;
       case "orders":
         ReadableMap payload = param.getMap("payload");
@@ -424,5 +427,26 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
                     }
                 });
     }
+
+//    public void showPromotionsPage(View view){
+//        TradeService tradeService = AlibabaSDK.getService(TradeService.class);
+//        PromotionsPage promotionsPage = new PromotionsPage("shop", "商家测试帐号17");
+//        tradeService.show(promotionsPage, null, MainActivity.this, null, new TradeProcessCallback(){
+//  
+//                    @Override
+//            public void onFailure(int code, String msg) {
+//                Toast.makeText(MainActivity.this, "失败 "+code+msg,
+//                                                Toast.LENGTH_SHORT).show();
+//                  
+//            }
+//  
+//                    @Override
+//            public void onPaySuccess(TradeResult tradeResult) {
+//                Toast.makeText(MainActivity.this, "成功", Toast.LENGTH_SHORT)
+//                        .show();
+//                  
+//            }});
+//    }
+
 
 }

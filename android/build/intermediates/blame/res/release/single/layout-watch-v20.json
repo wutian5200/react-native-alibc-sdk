@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/layout-watch-v20/abc_alert_dialog_button_bar_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/layout-watch-v20/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/layout-watch-v20/abc_alert_dialog_title_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/layout-watch-v20/abc_alert_dialog_title_material.xml"
+    }
+]

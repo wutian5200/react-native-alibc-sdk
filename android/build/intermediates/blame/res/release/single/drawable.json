@@ -1,106 +1,222 @@
 [
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/com_alibaba_bc_auth_ll_bg.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.alibaba.sdk.android/alibc_trade_sdk/3.1.1.11/res/drawable/com_alibaba_bc_auth_ll_bg.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/tooltip_frame_dark.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/tooltip_frame_dark.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_item_background_holo_dark.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_item_background_holo_dark.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_text_cursor_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_text_cursor_material.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_text_cursor_material.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_text_cursor_material.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/redbox_top_border_background.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/react-native-0.59.9.aar/fe87ce9babecdcc6234a8c42a3d89091/res/drawable/redbox_top_border_background.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_btn_colored_material.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_btn_colored_material.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/com_alibaba_bc_auth_cancle_btn.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/nb_trade-4.0.0.0.aar/ae202d20c844f68cf2618a6129ab9bf2/res/drawable/com_alibaba_bc_auth_cancle_btn.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_textfield_search_material.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_textfield_search_material.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_cab_background_top_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_cab_background_top_material.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/com_alibaba_bc_auth_success_btn.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.alibaba.sdk.android/alibc_trade_sdk/3.1.1.11/res/drawable/com_alibaba_bc_auth_success_btn.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_tab_indicator_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_tab_indicator_material.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_item_background_holo_light.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_item_background_holo_light.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/notification_tile_bg.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/d9b275924b9467cf065b3b99a2e9daa6/res/drawable/notification_tile_bg.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_ratingbar_full_material.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_ratingbar_full_material.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/tooltip_frame_light.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/tooltip_frame_light.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_cab_background_internal_bg.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_cab_background_internal_bg.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_ic_search_api_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_ic_search_api_material.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_tab_indicator_material.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_tab_indicator_material.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/notification_icon_background.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/d9b275924b9467cf065b3b99a2e9daa6/res/drawable/notification_icon_background.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_list_selector_holo_dark.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_list_selector_holo_dark.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_item_background_holo_dark.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_spinner_textfield_background_material.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_spinner_textfield_background_material.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_ic_clear_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_ic_clear_material.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_cab_background_top_material.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_cab_background_top_material.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_ic_menu_overflow_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_ic_menu_overflow_material.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_btn_radio_material.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_btn_radio_material.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/notification_bg_low.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/d9b275924b9467cf065b3b99a2e9daa6/res/drawable/notification_bg_low.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_edit_text_material.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_edit_text_material.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_list_selector_holo_light.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_btn_check_material.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_btn_check_material.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/design_fab_background.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/design-27.1.0.aar/258dc1d549873a93d042140bc7c820bc/res/drawable/design_fab_background.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_switch_thumb_material.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_switch_thumb_material.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_btn_borderless_material.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_btn_borderless_material.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_seekbar_track_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_seekbar_track_material.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/com_alibaba_bc_auth_cancle_btn.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.alibaba.sdk.android/alibc_trade_sdk/3.1.1.11/res/drawable/com_alibaba_bc_auth_cancle_btn.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/com_alibc_trade_auth_close.png",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.alibaba.sdk.android/alibc_trade_sdk/3.1.1.11/res/drawable/com_alibc_trade_auth_close.png"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/aliuser_send_sms_bg_btn_round.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/alibabauth_ui-2.0.0.6.aar/1198c018765a8f68e886cfc86a241f73/res/drawable/aliuser_send_sms_bg_btn_round.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_dialog_material_background_dark.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_dialog_material_background_dark.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_ic_go_search_api_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_ic_go_search_api_material.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_btn_default_mtrl_shape.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_btn_default_mtrl_shape.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_btn_borderless_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_btn_borderless_material.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_dialog_material_background_light.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_dialog_material_background_light.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_item_background_holo_light.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_item_background_holo_light.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_list_selector_background_transition_holo_dark.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/design_bottom_navigation_item_background.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/design-27.1.0.aar/258dc1d549873a93d042140bc7c820bc/res/drawable/design_bottom_navigation_item_background.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_list_selector_background_transition_holo_light.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_switch_thumb_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_switch_thumb_material.xml"
     },
     {
-        "merged": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/res/merged/release/drawable/abc_list_selector_holo_light.xml",
-        "source": "/Users/jan/data/project/demo/RNAlibcSdkDemo/node_modules/react-native-alibc-sdk/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_list_selector_holo_light.xml"
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/notification_bg.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/d9b275924b9467cf065b3b99a2e9daa6/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/com_alibaba_bc_auth_success_btn.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/nb_trade-4.0.0.0.aar/ae202d20c844f68cf2618a6129ab9bf2/res/drawable/com_alibaba_bc_auth_success_btn.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_ratingbar_small_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_list_selector_holo_dark.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/design_password_eye.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/design-27.1.0.aar/258dc1d549873a93d042140bc7c820bc/res/drawable/design_password_eye.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/com_alibaba_bc_auth_ll_bg.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/nb_trade-4.0.0.0.aar/ae202d20c844f68cf2618a6129ab9bf2/res/drawable/com_alibaba_bc_auth_ll_bg.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_ic_voice_search_api_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_cab_background_internal_bg.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_btn_colored_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_ratingbar_indicator_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/com_alibc_trade_auth_close.png",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/nb_trade-4.0.0.0.aar/ae202d20c844f68cf2618a6129ab9bf2/res/drawable/com_alibc_trade_auth_close.png"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_vector_test.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_seekbar_tick_mark_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_btn_default_mtrl_shape.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_btn_radio_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_ic_ab_back_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/design_snackbar_background.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/design-27.1.0.aar/258dc1d549873a93d042140bc7c820bc/res/drawable/design_snackbar_background.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_ratingbar_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/go_back_ico.png",
+        "source": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/src/main/res/drawable/go_back_ico.png"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_list_selector_background_transition_holo_light.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/navigation_empty_icon.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/design-27.1.0.aar/258dc1d549873a93d042140bc7c820bc/res/drawable/navigation_empty_icon.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_seekbar_thumb_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_textfield_search_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_list_divider_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_list_divider_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_spinner_textfield_background_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/aliuser_btn_lucency.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/alibabauth_ui-2.0.0.6.aar/1198c018765a8f68e886cfc86a241f73/res/drawable/aliuser_btn_lucency.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_dialog_material_background.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_edit_text_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/aliuser_bg_send_sms_btn_new.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/alibabauth_ui-2.0.0.6.aar/1198c018765a8f68e886cfc86a241f73/res/drawable/aliuser_bg_send_sms_btn_new.xml"
+    },
+    {
+        "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/drawable/abc_btn_check_material.xml",
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/640f7e3ff04eb3b0712222fcbea48bab/res/drawable/abc_btn_check_material.xml"
     }
 ]

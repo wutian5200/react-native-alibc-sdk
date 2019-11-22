@@ -15,7 +15,10 @@
 #import <AlibcTradeSDK/AlibcTradeSDK.h>
 #import <AlibabaAuthSDK/ALBBSDK.h>
 #import "ALiTradeSDKShareParam.h"
+//#import "AlibcTradePageFactory.h"
+#import <AlibcTradeSDK/AlibcTradePageFactory.h>
 #import "ALiTradeWebViewController.h"
+#import "TaobaoOAuthViewController.h"
 #import "UIKit/UIKit.h"
 
 
@@ -163,7 +166,7 @@ RCT_EXPORT_METHOD(show: (NSDictionary *)param open:(NSString *)open resolver:(RC
     if([open isEqualToString:@"None"]){
         showParams.openType = AlibcNativeFailModeNone;
     } else if([open isEqualToString:@"H5"]){
-        showParams.openType = AlibcNativeFailModeJumpH5;
+        showParams.openType = AlibcOpenTypeAuto;
     } else if([open isEqualToString:@"Auto"]){
         showParams.openType = AlibcOpenTypeAuto;
     } else if([open isEqualToString:@"Native"]){
@@ -177,8 +180,35 @@ RCT_EXPORT_METHOD(show: (NSDictionary *)param open:(NSString *)open resolver:(RC
         bizCode = @"detail";
         page = [AlibcTradePageFactory itemDetailPage:(NSString *)param[@"payload"]];
     } else if ([type isEqualToString:@"url"]) {
-//        page = [AlibcTradePageFactory page:(NSString *)param[@"payload"]];
-        [self _openByUrl:(NSString *)param[@"payload"]];
+        page = [AlibcTradePageFactory page:(NSString *)param[@"payload"]];
+        ALiTradeWebViewController* myView = [[ALiTradeWebViewController alloc] init];
+//        [[AlibcTradeSDK sharedInstance].tradeService show: myView webView: myView.webView page:page showParams:nil taoKeParams: nil trackParam: trackParam tradeProcessSuccessCallback:nil tradeProcessFailedCallback:nil];
+        
+        
+        NSInteger res  =  [[AlibcTradeSDK sharedInstance].tradeService
+         openByUrl:param[@"payload"]
+         identity:@"trade"
+         webView:myView.webView
+         parentController:myView
+         showParams:showParams
+         taoKeParams:taokeParams
+         trackParam:nil
+         tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
+
+         } tradeProcessFailedCallback:^(NSError * _Nullable error) {
+
+         }
+         ];
+        if (res == 1) {
+            UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+
+            [appRootVC presentViewController:myView animated:YES completion:nil];
+
+        }
+        
+//        page = [ALiTradePageFactory page: (NSString *)param[@"payload"]];
+//        [self _openByUrl:(NSString *)param[@"payload"]];
+//        [self _openByUrl:page];
         return;
     } else if ([type isEqualToString:@"shop"]) {
         bizCode = @"shop";
@@ -204,22 +234,24 @@ RCT_EXPORT_METHOD(show: (NSDictionary *)param open:(NSString *)open resolver:(RC
 //- (void)_show: (id<AlibcTradePage>)page callback: (RCTResponseSenderBlock)callback
 RCT_EXPORT_METHOD(_show: (id<AlibcTradePage>)page BizCode:(NSString *)bizCode resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
-    BOOL isNeedPush=[ALiTradeSDKShareParam sharedInstance].isNeedPush;
-    BOOL isBindWebview=[ALiTradeSDKShareParam sharedInstance].isBindWebview;
+//    BOOL isNeedPush=[ALiTradeSDKShareParam sharedInstance].isNeedPush;
+//    BOOL isBindWebview=[ALiTradeSDKShareParam sharedInstance].isBindWebview;
     
-    showParams.isNeedPush=TRUE;
-//    showParams.nativeFailMode=AlibcNativeFailModeJumpH5;
+    showParams.isNeedPush=NO;
+    showParams.nativeFailMode=AlibcNativeFailModeJumpH5;
 //    showParams.isNeedCustomNativeFailMode = [ALiTradeSDKShareParam sharedInstance].isNeedCustomFailMode;
-    showParams.linkKey=@"taobao";
+//    showParams.linkKey=@"taobao";
     showParams.openType = AlibcOpenTypeAuto;
-    
+    showParams.openType = AlibcNativeFailModeJumpH5;
+    showParams.isNeedCustomNativeFailMode = YES;
 //    id<AlibcTradeService> service = [AlibcTradeSDK sharedInstance].tradeService;
-    ALiTradeWebViewController* view = [[ALiTradeWebViewController alloc] init];
+//    ALiTradeWebViewController* view = [[ALiTradeWebViewController alloc] init];
+    TaobaoOAuthViewController* view = [[TaobaoOAuthViewController alloc] init];
 //    showParams.isNeedPush = YES;
     NSInteger res  =  [[AlibcTradeSDK sharedInstance].tradeService
      openByBizCode:bizCode
      page:page
-     webView:view.webView
+     webView:view.myWebView
      parentController:view
      showParams:showParams// 跳转方式
      taoKeParams:taokeParams  //配置 阿里妈妈信息
@@ -240,16 +272,7 @@ RCT_EXPORT_METHOD(_show: (id<AlibcTradePage>)page BizCode:(NSString *)bizCode re
     
     if (res == 1) {
         UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-//        UIViewController *topVC = appRootVC;
-//        if (topVC.presentedViewController) {
-//
-//            //有么有persentview  有了删除
-//
-//            topVC = topVC.presentedViewController;
-//
-//            [topVC dismissViewControllerAnimated:NO completion:nil];
-//
-//        }
+
         [appRootVC presentViewController:view animated:YES completion:nil];
 
     }
@@ -293,7 +316,7 @@ RCT_EXPORT_METHOD(_show: (id<AlibcTradePage>)page BizCode:(NSString *)bizCode re
     
 }
 
-- (void)_openByUrl:url
+RCT_EXPORT_METHOD(_openByUrl:url)
 {
     ALiTradeWebViewController* view = [[ALiTradeWebViewController alloc] init];
     id<AlibcTradeService> service = [AlibcTradeSDK sharedInstance].tradeService;
@@ -326,32 +349,6 @@ RCT_EXPORT_METHOD(_show: (id<AlibcTradePage>)page BizCode:(NSString *)bizCode re
      ];
 }
 
-//- (void)OpenPageByNewWay:(id<AlibcTradePage>)page BizCode:(NSString *)bizCode{
-//    AlibcTradeShowParams* showParam = [[AlibcTradeShowParams alloc] init];
-//    showParam.openType = [self openType];
-//    //    showParam.backUrl=@"tbopen23082328:https://h5.m.taobao.com";
-//    BOOL isNeedPush=[ALiTradeSDKShareParam sharedInstance].isNeedPush;
-//    BOOL isBindWebview=[ALiTradeSDKShareParam sharedInstance].isBindWebview;
-//    showParam.isNeedPush=isNeedPush;
-//    showParam.nativeFailMode=AlibcNativeFailModeJumpH5;
-//    showParam.isNeedCustomNativeFailMode = [ALiTradeSDKShareParam sharedInstance].isNeedCustomFailMode;
-//    showParam.linkKey=@"taobao";
-//    if (isBindWebview) {
-//        ALiTradeWebViewController* view = [[ALiTradeWebViewController alloc] init];
-//        NSInteger res  =  [[AlibcTradeSDK sharedInstance].tradeService openByBizCode:bizCode page:page webView:view.webView parentController:view showParams:showParam taoKeParams:taokeParams trackParam:[self customParam] tradeProcessSuccessCallback:self.onTradeSuccess tradeProcessFailedCallback:self.onTradeFailure];
-//        if (res == 1) {
-//            [self.navigationController pushViewController:view animated:YES];
-//        }
-//    } else {
-//        if (isNeedPush) {
-//            [[AlibcTradeSDK sharedInstance].tradeService openByBizCode:bizCode page:page webView:nil parentController:self.navigationController showParams:showParam taoKeParams:[self taokeParam] trackParam:[self customParam] tradeProcessSuccessCallback:self.onTradeSuccess tradeProcessFailedCallback:self.onTradeFailure];
-//        } else {
-//            [[AlibcTradeSDK sharedInstance].tradeService openByBizCode:bizCode page:page webView:nil parentController:self showParams:showParam taoKeParams:[self taokeParam] trackParam:[self customParam] tradeProcessSuccessCallback:self.onTradeSuccess tradeProcessFailedCallback:self.onTradeFailure];
-//        }
-//        
-//    }
-//}
-//
 
 
 - (void)_showInWebView: (UIWebView *)webView url:url page:(id<AlibcTradePage>)page

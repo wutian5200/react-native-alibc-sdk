@@ -1,6 +1,6 @@
 {
   "name": "@dddfffppp/react-native-alibcsdk",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "React Native的阿里百川sdk， 包含淘宝授权登录等",
   "main": "index.js",
   "scripts": {

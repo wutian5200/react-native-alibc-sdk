@@ -1,13 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:id="@+id/dingbu"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+
+        <!--android:drawableLeft="@drawable/go_back_ico"-->
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/fh"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:text="完成"
+            android:textSize="15dp"
+            android:textColor="#000000"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="淘宝授权"
+            android:textSize="18dp"
+            />
+    </RelativeLayout>
 
     <WebView
-        android:id="@+id/webview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="webview test" />
+        android:id="@+id/webView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp" />
+
+    <!--<WebView-->
+        <!--android:id="@+id/webview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:text="webview test" />-->
 
 </LinearLayout>

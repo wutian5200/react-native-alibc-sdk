@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginTop="20dp"
-            android:text="获取"
+            android:text="@string/com_alibc_auth_actiivty_get"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -57,7 +57,7 @@
             android:layout_below="@+id/open_auth_desc"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="20dp"
-            android:text="确认授权"
+            android:text="@string/com_alibc_auth_actiivty_auth_ok"
             android:textColor="#FFFFFF"
             android:textSize="12sp" />
 
@@ -72,7 +72,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="20dp"
             android:gravity="center"
-            android:text="取消"
+            android:text="@string/com_alibc_auth_actiivty_cancel"
             android:textColor="#FFFFFF"
             android:textSize="12sp" />
 
