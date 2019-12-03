@@ -263,6 +263,8 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
       alibcShowParams.setClientType("taobao");
       alibcShowParams.setBackUrl("alisdk://");
 //      alibcShowParams.setBackUrl("alisdk://");
+
+      System.out.println("Urlll11111111111111" + Type);
     switch (Type){
         case "Auto":
             System.out.println("Urlll44444444444" + Type);

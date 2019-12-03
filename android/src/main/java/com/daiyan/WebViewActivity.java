@@ -101,21 +101,19 @@ public class WebViewActivity extends Activity {
 
     private void openByUrl(String url, WebView webView) {
         AlibcShowParams showParams = new AlibcShowParams();
-        showParams.setOpenType(OpenType.Native);
+        showParams.setOpenType(OpenType.Auto);
         showParams.setClientType("taobao");
-        showParams.setBackUrl("");
+        showParams.setBackUrl("alisdk://");
 //        showParams.setNativeOpenFailedMode(AlibcFailModeType.AlibcNativeFailModeJumpH5);
         AlibcTaokeParams taokeParams = new AlibcTaokeParams("", "", "");
-        taokeParams.setPid("mm_112883640_11584347_72287650277");
+        taokeParams.setPid("mm_113435089_910000275_109603600237");
 //        taokeParams.setAdzoneid("29932014");
         Map<String, String> trackParams = new HashMap<>();
 
         WebViewClient WebViewClient = new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                System.out.println("Urll8888888" + url);
                 if(url.contains("myExit://") || url.contains("myexit://")){
-                    System.out.println("Urll00000000000" + url);
                     finish();
                     return true;
                 }
