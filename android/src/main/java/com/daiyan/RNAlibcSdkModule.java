@@ -366,9 +366,21 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
 
   private void _showByUrl(String url,  final Promise promise){
       // 以显示传入url的方式打开页面（第二个参数是套件名称）
+//      alibcShowParams.setOpenType(OpenType.Native);
+      AlibcShowParams showParams = new AlibcShowParams();
+      showParams.setOpenType(OpenType.Native);
+      showParams.setClientType("taobao");
+      showParams.setBackUrl("alisdk://");
+//        showParams.setNativeOpenFailedMode(AlibcFailModeType.AlibcNativeFailModeJumpH5);
+      AlibcTaokeParams taokeParams = new AlibcTaokeParams("", "", "");
+      taokeParams.setPid("mm_113435089_910000275_109603600237");
+
+      taokeParams.extraParams = new HashMap<>();
+      taokeParams.extraParams.put("taokeAppkey", "25634417");
+
       AlibcTrade.openByUrl(mActivity, "", url, null,
-              new WebViewClient(), new WebChromeClient(), alibcShowParams,
-              alibcTaokeParams, exParams, new AlibcTradeCallback() {
+              new WebViewClient(), new WebChromeClient(), showParams,
+              taokeParams, exParams, new AlibcTradeCallback() {
                   @Override
                   public void onTradeSuccess(AlibcTradeResult tradeResult) {
                       AlibcLogger.i(TAG, "request success");

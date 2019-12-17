@@ -77,7 +77,7 @@
     },
     {
         "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/layout/com_taobao_nb_sdk_web_view_activity.xml",
-        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/nb_trade-4.0.0.0.aar/ae202d20c844f68cf2618a6129ab9bf2/res/layout/com_taobao_nb_sdk_web_view_activity.xml"
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/nb_trade-4.0.0.8.aar/2f392d58be636162f128dbf979ec103a/res/layout/com_taobao_nb_sdk_web_view_activity.xml"
     },
     {
         "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/layout/notification_template_media.xml",
@@ -217,7 +217,7 @@
     },
     {
         "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/layout/com_alibaba_bc_layout.xml",
-        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/AlibcTradeBiz-4.0.0.0.aar/238473654b407b2ccb5dfd488afb3b12/res/layout/com_alibaba_bc_layout.xml"
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/AlibcTradeBiz-4.0.0.8.aar/2a922335ea49cfa3c3f78643c30cea38/res/layout/com_alibaba_bc_layout.xml"
     },
     {
         "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/layout/design_layout_snackbar_include.xml",
@@ -237,11 +237,11 @@
     },
     {
         "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/layout/com_alibc_auth_actiivty.xml",
-        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/nb_trade-4.0.0.0.aar/ae202d20c844f68cf2618a6129ab9bf2/res/layout/com_alibc_auth_actiivty.xml"
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/nb_trade-4.0.0.8.aar/2f392d58be636162f128dbf979ec103a/res/layout/com_alibc_auth_actiivty.xml"
     },
     {
         "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/layout/com_taobao_nb_sdk_web_view_title_bar.xml",
-        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/nb_trade-4.0.0.0.aar/ae202d20c844f68cf2618a6129ab9bf2/res/layout/com_taobao_nb_sdk_web_view_title_bar.xml"
+        "source": "/Users/jan/.gradle/caches/transforms-1/files-1.1/nb_trade-4.0.0.8.aar/2f392d58be636162f128dbf979ec103a/res/layout/com_taobao_nb_sdk_web_view_title_bar.xml"
     },
     {
         "merged": "/Users/jan/data/project/butie/node_modules/@dddfffppp/react-native-alibcsdk/android/build/intermediates/res/merged/release/layout/abc_screen_simple.xml",

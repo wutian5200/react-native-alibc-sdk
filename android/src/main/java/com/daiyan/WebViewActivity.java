@@ -42,7 +42,7 @@ public class WebViewActivity extends Activity {
 
         setContentView(R.layout.webview_activity);
         WindowManager.LayoutParams lp = getWindow().getAttributes();
-        lp.layoutInDisplayCutoutMode= WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER;
+//        lp.layoutInDisplayCutoutMode= WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER;
 
         getWindow().setAttributes(lp);
 
@@ -71,9 +71,9 @@ public class WebViewActivity extends Activity {
             webView.setWebViewClient(new WebViewClient() {
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                    System.out.println("Urll8888888" + url);
+//                    System.out.println("Urll8888888" + url);
                     if(url.contains("myExit://") || url.contains("myexit://")){
-                        System.out.println("Urll00000000000" + url);
+//                        System.out.println("Urll00000000000" + url);
                         finish();
                         return true;
                     }
@@ -109,7 +109,7 @@ public class WebViewActivity extends Activity {
         taokeParams.setPid("mm_113435089_910000275_109603600237");
 //        taokeParams.setAdzoneid("29932014");
         Map<String, String> trackParams = new HashMap<>();
-
+        System.out.println("Urlll133333333333333" + url);
         WebViewClient WebViewClient = new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
