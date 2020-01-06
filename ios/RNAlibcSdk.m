@@ -46,5 +46,21 @@ RCT_EXPORT_METHOD(show: (NSDictionary *)param open:(NSString *)open resolver:(RC
 }
 
 
+RCT_EXPORT_METHOD(authWithInfo: (NSString *)infoStr resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject){
+    [[AlibcSdkBridge sharedInstance] authWithInfo:infoStr resolver:resolve rejecter:reject];
+}
+
+RCT_EXPORT_METHOD(pay: (NSString *)orderInfo resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject){
+    [[AlibcSdkBridge sharedInstance] pay:orderInfo resolver:resolve rejecter:reject];
+}
+
+RCT_EXPORT_METHOD(payInterceptorWithUrl:  (NSString *)urlStr resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject){
+    [[AlibcSdkBridge sharedInstance] payInterceptorWithUrl:urlStr resolver:resolve rejecter:reject];
+}
+
+RCT_EXPORT_METHOD(getVersion:  (RCTPromiseResolveBlock)resolve){
+    [[AlibcSdkBridge sharedInstance] getVersion:resolve];
+}
+
 @end
   

@@ -80,6 +80,7 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
   private AlibcShowParams alibcShowParams;//页面打开方式，默认，H5，Native
   private AlibcTaokeParams alibcTaokeParams = null;//淘客参数，包括pid，unionid，subPid
   private static Activity mActivity;
+  private static Alipay alipay;
   private final ActivityEventListener mActivityEventListener = new BaseActivityEventListener() {
     @Override
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent intent) {
@@ -89,6 +90,9 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
 
   static private RNAlibcSdkModule mRNAlibcSdkModule = null;
   static public RNAlibcSdkModule sharedInstance(ReactApplicationContext context) {
+      if(alipay == null){
+          alipay = new Alipay(context);
+      }
     if (mRNAlibcSdkModule == null)
       return new RNAlibcSdkModule(context);
     else
@@ -395,9 +399,6 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
                   }
               });
   }
-//      AlibcTrade.openByBizCode(mActivity, page, null, new WebViewClient(),
-//              new WebChromeClient(), "detail", alibcShowParams, alibcTaokeParams,
-//              exParams, new AlibcTradeCallback() {
 
   private void _showInWebView(final AlibcBasePage page,final String ByCode, final Promise promise) {
       AlibcTrade.openByBizCode(mActivity, page, null, new WebViewClient(), new WebChromeClient(),
@@ -442,25 +443,28 @@ public class RNAlibcSdkModule extends ReactContextBaseJavaModule {
                 });
     }
 
-//    public void showPromotionsPage(View view){
-//        TradeService tradeService = AlibabaSDK.getService(TradeService.class);
-//        PromotionsPage promotionsPage = new PromotionsPage("shop", "商家测试帐号17");
-//        tradeService.show(promotionsPage, null, MainActivity.this, null, new TradeProcessCallback(){
-//  
-//                    @Override
-//            public void onFailure(int code, String msg) {
-//                Toast.makeText(MainActivity.this, "失败 "+code+msg,
-//                                                Toast.LENGTH_SHORT).show();
-//                  
-//            }
-//  
-//                    @Override
-//            public void onPaySuccess(TradeResult tradeResult) {
-//                Toast.makeText(MainActivity.this, "成功", Toast.LENGTH_SHORT)
-//                        .show();
-//                  
-//            }});
-//    }
+
+    /**
+     * 支付宝 支付 开始
+     */
+    @ReactMethod
+    public void authWithInfo(final String infoStr, final Promise promise) {
+        alipay.authWithInfo(infoStr,promise);
+    }
+
+
+    @ReactMethod
+    public void pay(final String infoStr, final Promise promise) {
+        alipay.pay(infoStr,promise);
+    }
+    @ReactMethod
+    public void payInterceptorWithUrl(final String infoStr, final Promise promise) {
+        alipay.payInterceptorWithUrl(infoStr,promise);
+    }
+    @ReactMethod
+    public void getVersion(final Promise promise) {
+        alipay.getVersion(promise);
+    }
 
 
 }
