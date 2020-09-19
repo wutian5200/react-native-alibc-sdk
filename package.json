@@ -4,7 +4,7 @@
   "description": "React Native的阿里百川sdk， 包含淘宝授权登录，私域授权等",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" &&  exit 1"
   },
   "repository": {
     "type": "git",
