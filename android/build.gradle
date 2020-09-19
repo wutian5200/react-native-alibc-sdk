@@ -1,7 +1,9 @@
 
 buildscript {
     repositories {
-        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/google'}
+        maven { url 'https://maven.aliyun.com/repository/jcenter'}
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public'}
     }
 
     dependencies {
@@ -33,9 +35,9 @@ repositories {
 }
 
 dependencies {
-    compile 'com.facebook.react:react-native:+'
+    implementation 'com.facebook.react:react-native:+'
     //fastjson
-    compile 'com.alibaba:fastjson:1.2.9'
+    implementation 'com.alibaba:fastjson:1.2.9'
 
 
 
@@ -67,4 +69,3 @@ dependencies {
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
 
 }
-  
